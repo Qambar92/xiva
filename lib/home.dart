@@ -1,4 +1,5 @@
 import 'package:dastur2/model/user_model.dart';
+import 'package:dastur2/pages/pages.dart';
 import 'package:dastur2/servises/pref_servises.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -155,7 +156,7 @@ class _homepageState extends State<homepage> {
                 Container(
                     child: GestureDetector(
                       onTap: (){
-                        print("Button");
+                       Navigator.pushNamed(context,royhatdan_otish.id);
                       },
                       child: Text("Sign Up",style: TextStyle(color: Colors.blue,fontSize: 20,fontWeight: FontWeight.bold),),
                     )

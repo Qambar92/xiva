@@ -1,3 +1,4 @@
+import 'package:dastur2/home.dart';
 import 'package:flutter/material.dart';
 class royhatdan_otish extends StatefulWidget {
   const royhatdan_otish({Key? key}) : super(key: key);
@@ -139,7 +140,7 @@ class _royhatdan_otishState extends State<royhatdan_otish> {
               Container(
                   child: GestureDetector(
                     onTap: (){
-                      print("Button");
+                      Navigator.pushNamed(context,homepage.id);
                     },
                     child: Text("Login here",style: TextStyle(color: Colors.blue,fontSize: 20,fontWeight: FontWeight.bold),),
                   )

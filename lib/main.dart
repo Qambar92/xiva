@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
 
           primarySwatch: Colors.blue,
         ),
-        home: royhatdan_otish(),
+        home: homepage(),
         routes: {
           // RoyhatdanOtish.id:(context)=>RoyhatdanOtish(),
           homepage.id: (context) => homepage(),
