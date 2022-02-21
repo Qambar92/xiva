@@ -3,8 +3,11 @@ class User{
    String email;
    String possword;
 
-  User({required this.id,required this.email,required this.possword});
+
+
+  User({required this.id,required this.email,required this.possword,});
   User.from({required this.email,required this.possword});
+
 
   User.fromJson(Map<String, dynamic>json)
   :id = json["id"],

@@ -1,5 +1,9 @@
 import 'package:dastur2/home.dart';
+import 'package:dastur2/model/acount_model.dart';
+import 'package:dastur2/servises/pref_servises.dart';
 import 'package:flutter/material.dart';
+
+import '../servises/pref_ser.dart';
 class royhatdan_otish extends StatefulWidget {
   const royhatdan_otish({Key? key}) : super(key: key);
   static final id="royhatdan_otish";
@@ -9,6 +13,28 @@ class royhatdan_otish extends StatefulWidget {
 }
 
 class _royhatdan_otishState extends State<royhatdan_otish> {
+  final ismcontroller = TextEditingController();
+  final emailcontroller = TextEditingController();
+  final phonecontroller = TextEditingController();
+  final posswordcontroller = TextEditingController();
+  final possword2controller = TextEditingController();
+
+
+  void do_login(){
+    String ism = ismcontroller.text.toString().trim();
+    String email = emailcontroller.text.toString().trim();
+    String phone = phonecontroller.text.toString().trim();
+    String possword = posswordcontroller.text.toString().trim();
+    String possword2 = possword2controller.text.toString().trim();
+    Acount acount = Acount.from(ism: ism, email: email, phone: phone, possword: possword, possword2: possword2);
+    Pref.storeAcount(acount);
+
+    Pref.lodeAcount().then((Acount) => {
+      print(acount.ism)
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +61,7 @@ class _royhatdan_otishState extends State<royhatdan_otish> {
                 color: Colors.white
             ),
             child: TextField(
-             // controller: emailcontroller,
+              controller: ismcontroller,
               decoration: InputDecoration(
                 hintText: "Ism",
                 border: InputBorder.none,
@@ -53,7 +79,7 @@ class _royhatdan_otishState extends State<royhatdan_otish> {
                 color: Colors.white
             ),
             child: TextField(
-             // controller: posswordcontroller,
+              controller: emailcontroller,
               decoration: InputDecoration(
                 hintText: "Email",
                 border: InputBorder.none,
@@ -71,7 +97,7 @@ class _royhatdan_otishState extends State<royhatdan_otish> {
                 color: Colors.white
             ),
             child: TextField(
-              //controller: posswordcontroller,
+              controller: phonecontroller,
               decoration: InputDecoration(
                 hintText: "Phone",
                 border: InputBorder.none,
@@ -89,7 +115,7 @@ class _royhatdan_otishState extends State<royhatdan_otish> {
                 color: Colors.white
             ),
             child: TextField(
-             // controller: emailcontroller,
+              controller: posswordcontroller,
               decoration: InputDecoration(
                 hintText: "Password",
                 border: InputBorder.none,
@@ -107,9 +133,9 @@ class _royhatdan_otishState extends State<royhatdan_otish> {
                 color: Colors.white
             ),
             child: TextField(
-             // controller: posswordcontroller,
+              controller: possword2controller,
               decoration: InputDecoration(
-                hintText: "Possword",
+                hintText: "Confirm Possword",
                 border: InputBorder.none,
                 icon: Icon(Icons.lock,color: Colors.blue,),
               ),
@@ -124,7 +150,7 @@ class _royhatdan_otishState extends State<royhatdan_otish> {
                 borderRadius: BorderRadius.circular(25),
                 color: Colors.indigo),
             child: FlatButton(
-              onPressed: (){},
+              onPressed: do_login,
               child: Text("CREATE",style: TextStyle(color: Colors.white,fontSize: 18),),
             ),
           ),
