@@ -22,7 +22,7 @@ class Prefs{
   // User related
   static storeUser(User user)async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String stringUser = jsonEncode(user);
+    String stringUser = jsonEncode(User);
     prefs.setString("user", stringUser);
 
   }

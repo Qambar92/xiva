@@ -34,9 +34,16 @@ class _homepageState extends State<homepage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
+             // width: 200,
+              height: 230,
+              child: Image.asset('assets/image/2.png')
+            ),
+
+
+            Container(
               margin: EdgeInsets.only(left: 15,right: 15),
               padding: EdgeInsets.only(left: 15,right: 15),
-              height: 50,
+              height: 60,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
                 color: Colors.grey[200]
@@ -46,15 +53,15 @@ class _homepageState extends State<homepage> {
                 decoration: InputDecoration(
                   hintText: "Email",
                   border: InputBorder.none,
-                  icon: Icon(Icons.email,color: Colors.blue,),
+                  icon: Icon(Icons.account_circle_sharp,color: Colors.blue,),
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 15,),
             Container(
               margin: EdgeInsets.only(left: 15,right: 15),
               padding: EdgeInsets.only(left: 15,right: 15),
-              height: 50,
+              height: 60,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   color: Colors.grey[200]
@@ -68,19 +75,96 @@ class _homepageState extends State<homepage> {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 15,),
             Container(
-              margin: EdgeInsets.only(left: 15,right: 15),
+              margin: EdgeInsets.only(left: 200),
+              child: Text("Forgot Password?",style: TextStyle(fontSize: 15,color: Colors.black54,fontWeight: FontWeight.bold),),
+            ),
+            SizedBox(height: 20,),
+            Container(
+              margin: EdgeInsets.only(left: 120,right: 120),
               width: double.infinity,
               height: 50,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
-                color: Colors.blue),
+                color: Colors.indigo),
               child: FlatButton(
                 onPressed: _dologin,
-                child: Text("Login",style: TextStyle(color: Colors.white),),
+                child: Text("Log In",style: TextStyle(color: Colors.white,fontSize: 20),),
               ),
+            ),
+            SizedBox(height: 40,),
+            Container(
+             // margin: EdgeInsets.only(left: 200),
+              child: Text("Or connect using",style: TextStyle(fontSize: 15,color: Colors.black26,),),
+            ),
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                 // margin: EdgeInsets.only(left: 120,right: 120),
+                  width: 150,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.blueAccent),
+                  child: FlatButton(
+                    onPressed: _dologin,
+                    child: Row(
+                      children: [
+                        Icon(Icons.facebook,color: Colors.white,),
+                        SizedBox(width: 5,),
+
+                        Text("Facebook",style: TextStyle(color: Colors.white,fontSize: 20),)
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(width: 20,),
+                Container(
+                  // margin: EdgeInsets.only(left: 120,right: 120),
+                  width: 150,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.deepOrange),
+                  child: FlatButton(
+                    onPressed: _dologin,
+                    child: Row(
+                      children: [
+                        Icon(Icons.g_mobiledata,color: Colors.white,size: 35,),
+                        SizedBox(width: 5,),
+
+                        Text("Google",style: TextStyle(color: Colors.white,fontSize: 20),)
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 40,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  // margin: EdgeInsets.only(left: 200),
+                  child: Text("Don't have an account?   ",style: TextStyle(fontSize: 18,color: Colors.black54,),),
+
+                ),
+                Container(
+                    child: GestureDetector(
+                      onTap: (){
+                        print("Button");
+                      },
+                      child: Text("Sign Up",style: TextStyle(color: Colors.blue,fontSize: 20,fontWeight: FontWeight.bold),),
+                    )
+                ),
+              ],
             )
+
+
+
           ],
         ),
       )

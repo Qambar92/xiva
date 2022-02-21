@@ -1,4 +1,5 @@
 import 'package:dastur2/home.dart';
+import 'package:dastur2/pages/pages.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,10 +18,11 @@ class MyApp extends StatelessWidget {
 
           primarySwatch: Colors.blue,
         ),
-        home: homepage(),
+        home: royhatdan_otish(),
         routes: {
           // RoyhatdanOtish.id:(context)=>RoyhatdanOtish(),
-          homepage.id: (context) => homepage()
+          homepage.id: (context) => homepage(),
+          royhatdan_otish.id:(context)=>royhatdan_otish()
         }
     );
   }
